@@ -1,7 +1,7 @@
 const snmp = require ("net-snmp");
 
 /*
-mongodb://admin:Pa$$w0rD@ds125945.mlab.com:25945/snmp-print-monitor
+mongodb://yourusername:yourpassword:25945/snmp-print-monitor
 oid: [1, 3, 6, 1, 2, 1, 43, 10, 2, 1, 4, 1, 1] - всего напечато страниц
 snmpwalk -Cc -v 1 -c public print102466229 1.3.6.1.2.1.43.10.2.1.4.1.1
 print102466251 - финансы
