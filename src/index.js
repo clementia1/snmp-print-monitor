@@ -2,18 +2,10 @@ const snmp = require ('net-snmp');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 const Timestamp = require('mongodb').Timestamp;
-const url = 'mongodb://admin:Pa$$w0rD@ds125945.mlab.com:25945/snmp-print-monitor';
+const url = 'mongodb://yourusername:yourpassword:25945/snmp-print-monitor';
 const mongoClient = new MongoClient(url, {
 	useNewUrlParser: true
 });
-
-/*
-mongodb://admin:Pa$$w0rD@ds125945.mlab.com:25945/snmp-print-monitor
-oid: [1, 3, 6, 1, 2, 1, 43, 10, 2, 1, 4, 1, 1] - всего напечато страниц
-print102466251 - финансы
-print10486239 - профобучение
-print102466279 - бухгалтерия 205 каб
-*/
 
 function getTotalPagesPrinted(url, callback) {
 	const options = {
@@ -123,7 +115,6 @@ function findByTimestampRange(collection) {
 	.catch(err => console.error(err));
 }
 
-// findByTimestampRange('print102466251')
 
 async function findAll(collection) {
 	let client = await MongoClient.connect(url, {
